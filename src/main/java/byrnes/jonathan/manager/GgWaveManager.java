@@ -1,4 +1,4 @@
-package gg.tsmc.manager;
+package byrnes.jonathan.manager;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;

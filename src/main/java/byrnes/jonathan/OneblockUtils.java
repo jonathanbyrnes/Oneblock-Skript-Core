@@ -1,11 +1,11 @@
-package gg.tsmc;
+package byrnes.jonathan;
 
-import gg.tsmc.command.*;
-import gg.tsmc.config.ConfigHelper;
-import gg.tsmc.listener.CoreListener;
-import gg.tsmc.listener.GgWaveListener;
-import gg.tsmc.manager.GgWaveManager;
-import gg.tsmc.scheduler.BroadcastScheduler;
+import byrnes.jonathan.command.*;
+import byrnes.jonathan.config.ConfigHelper;
+import byrnes.jonathan.listener.CoreListener;
+import byrnes.jonathan.listener.GgWaveListener;
+import byrnes.jonathan.manager.GgWaveManager;
+import byrnes.jonathan.scheduler.BroadcastScheduler;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.incendo.cloud.annotations.AnnotationParser;

@@ -1,6 +1,6 @@
 name: OneblockUtils
 version: '1.0-SNAPSHOT'
-main: gg.tsmc.OneblockUtils
+main: byrnes.jonathan.OneblockUtils
 api-version: '1.21'
 dependencies:
   server:

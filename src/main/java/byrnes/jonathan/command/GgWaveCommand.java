@@ -1,6 +1,6 @@
-package gg.tsmc.command;
+package byrnes.jonathan.command;
 
-import gg.tsmc.manager.GgWaveManager;
+import byrnes.jonathan.manager.GgWaveManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.Plugin;
