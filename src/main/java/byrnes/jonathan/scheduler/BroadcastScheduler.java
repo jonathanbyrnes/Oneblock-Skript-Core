@@ -1,7 +1,7 @@
-package gg.tsmc.scheduler;
+package byrnes.jonathan.scheduler;
 
-import gg.tsmc.config.ConfigHelper;
-import gg.tsmc.util.MessageUtil;
+import byrnes.jonathan.config.ConfigHelper;
+import byrnes.jonathan.util.MessageUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.plugin.Plugin;

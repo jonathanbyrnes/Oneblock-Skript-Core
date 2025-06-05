@@ -1,4 +1,4 @@
-package gg.tsmc.util;
+package byrnes.jonathan.util;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;

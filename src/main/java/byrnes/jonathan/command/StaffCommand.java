@@ -1,4 +1,4 @@
-package gg.tsmc.command;
+package byrnes.jonathan.command;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;

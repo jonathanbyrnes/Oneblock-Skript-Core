@@ -1,6 +1,6 @@
-package gg.tsmc.listener;
+package byrnes.jonathan.listener;
 
-import gg.tsmc.manager.GgWaveManager;
+import byrnes.jonathan.manager.GgWaveManager;
 import io.papermc.paper.event.player.AsyncChatEvent;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;

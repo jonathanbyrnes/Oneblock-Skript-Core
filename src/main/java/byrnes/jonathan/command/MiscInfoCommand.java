@@ -1,7 +1,7 @@
-package gg.tsmc.command;
+package byrnes.jonathan.command;
 
-import gg.tsmc.config.ConfigHelper;
-import gg.tsmc.util.MessageUtil;
+import byrnes.jonathan.config.ConfigHelper;
+import byrnes.jonathan.util.MessageUtil;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.event.ClickEvent;
 import org.bukkit.command.CommandSender;

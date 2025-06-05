@@ -1,8 +1,8 @@
-package gg.tsmc.command;
+package byrnes.jonathan.command;
 
-import gg.tsmc.config.ConfigHelper;
-import gg.tsmc.scheduler.BroadcastScheduler;
-import gg.tsmc.util.MessageUtil;
+import byrnes.jonathan.config.ConfigHelper;
+import byrnes.jonathan.scheduler.BroadcastScheduler;
+import byrnes.jonathan.util.MessageUtil;
 import org.bukkit.command.CommandSender;
 import org.incendo.cloud.annotations.Command;
 import org.incendo.cloud.annotations.Permission;
@@ -14,7 +14,7 @@ import java.util.List;
 public class BroadcastsCommand {
 
     private final ConfigHelper config;
-    private final gg.tsmc.scheduler.BroadcastScheduler scheduler;
+    private final BroadcastScheduler scheduler;
 
     public BroadcastsCommand(ConfigHelper config, BroadcastScheduler scheduler) {
         this.config = config;

@@ -1,6 +1,6 @@
-package gg.tsmc.config;
+package byrnes.jonathan.config;
 
-import gg.tsmc.util.MessageUtil;
+import byrnes.jonathan.util.MessageUtil;
 import net.kyori.adventure.text.Component;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;

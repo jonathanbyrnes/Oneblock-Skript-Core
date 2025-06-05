@@ -1,7 +1,7 @@
-package gg.tsmc.command;
+package byrnes.jonathan.command;
 
-import gg.tsmc.config.ConfigHelper;
-import gg.tsmc.util.MessageUtil;
+import byrnes.jonathan.config.ConfigHelper;
+import byrnes.jonathan.util.MessageUtil;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
@@ -10,8 +10,6 @@ import org.incendo.cloud.annotations.Argument;
 import org.incendo.cloud.annotations.Command;
 import org.incendo.cloud.annotations.Permission;
 import org.incendo.cloud.context.CommandContext;
-
-import java.util.List;
 
 @Command("seasonalkey")
 public class SeasonalKeyCommand {
