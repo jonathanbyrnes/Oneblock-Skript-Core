@@ -3,7 +3,9 @@ package byrnes.jonathan;
 import byrnes.jonathan.command.*;
 import byrnes.jonathan.config.ConfigHelper;
 import byrnes.jonathan.listener.CoreListener;
+import byrnes.jonathan.listener.DropLockListener;
 import byrnes.jonathan.listener.GgWaveListener;
+import byrnes.jonathan.manager.DropLockManager;
 import byrnes.jonathan.manager.GgWaveManager;
 import byrnes.jonathan.scheduler.BroadcastScheduler;
 import org.bukkit.command.CommandSender;
@@ -27,6 +29,7 @@ public final class OneblockUtils extends JavaPlugin {
         ConfigHelper configHelper = new ConfigHelper(this);
 
         GgWaveManager ggManager = new GgWaveManager();
+        DropLockManager dropLockManager = new DropLockManager();
 
         // Register schedulers
         this.broadcastScheduler = new BroadcastScheduler(this, configHelper);
@@ -36,6 +39,7 @@ public final class OneblockUtils extends JavaPlugin {
         CoreListener coreListener = new CoreListener(configHelper);
         getServer().getPluginManager().registerEvents(coreListener, this);
         getServer().getPluginManager().registerEvents(new GgWaveListener(ggManager, this.getLogger()), this);
+        getServer().getPluginManager().registerEvents(new DropLockListener(dropLockManager,configHelper), this);
 
         // Register commands
         parser.parse(new KeyAllCommand(configHelper));
@@ -51,6 +55,7 @@ public final class OneblockUtils extends JavaPlugin {
         parser.parse(new ClaimWeeklyRewardCommand(configHelper));
         parser.parse(new SeasonalKeyCommand(configHelper));
         parser.parse(new StaffCommand());
+        parser.parse(new DropLockCommand(dropLockManager,configHelper));
 
     }
 
