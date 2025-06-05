@@ -1,0 +1,393 @@
+## KEY ALL SECTION
+keyall:
+  crates:
+    - common
+    - rare
+    - epic
+    - spawner
+    - gamer
+  messages:
+    invalid-key-type: "<red>Invalid key type: <white>{keyType}"
+    reload-success: "<green>KeyAll config reloaded."
+    help:
+    - "<gray>/keyall [type] [amount]</gray> <dark_gray>- <white>Give keys to all online players."
+    - "<gray>/keyall reload</gray> <dark_gray>- <white>Reloads the config file."
+    - "<gray>/keyall help</gray> <dark_gray>- <white>Shows this help message."
+##
+## APPLY EFFECT SECTION
+effects:
+  jump:
+    type: jump_boost
+    permission: group.pro
+    amplifier: 0
+  regeneration:
+    type: regeneration
+    permission: group.legend
+    amplifier: 0
+  strength:
+    type: strength
+    permission: group.master
+    amplifier: 1
+  nightvision:
+    type: night_vision
+    permission: group.elite
+    amplifier: 0
+  speed:
+    type: speed
+    permission: group.ultimate
+    amplifier: 0
+  haste:
+    type: haste
+    permission: group.fruit
+    amplifier: 0
+  messages:
+    effect-applied: "<gradient:#FF5DB4:#FF84B4>Perks</gradient> <dark_gray>❘</dark_gray> <white>Applied potion of {type}!"
+    effect-cleared: "<gradient:#FF5DB4:#FF84B4>Perks</gradient> <dark_gray>❘</dark_gray> <white>Removed all active potion effects!"
+    effect-not-allowed: "<red>You don’t have permission for <white>{type}</white>!"
+    effect-invalid: "<red>Unknown effect: <white>{type}</white>."
+    reload-success: "<green>ApplyEffect config reloaded."
+    help:
+      - "<gray>/applyeffect <effect> <player></gray> <dark_gray>- <white>Apply a perk to a player."
+      - "<gray>/applyeffect none <player></gray> <dark_gray>- <white>Clear all perk effects."
+      - "<gray>/applyeffect reload</gray> <dark_gray>- <white>Reload the perk config."
+      - "<gray>/applyeffect help</gray> <dark_gray>- <white>Show this help menu."
+###
+## BOOSTER CLAIM SECTION
+booster-claim:
+  cooldown-node: boosterreward.cooldown
+  cooldown-duration: "7d"
+  server: oneblock
+  groups:
+    fruit:
+      permission: group.fruit
+      booster: booster-money-100-1h
+      amount: 3
+    ultimate:
+      permission: group.ultimate
+      booster: booster-money-100-1h
+      amount: 1
+    elite:
+      permission: group.elite
+      booster: booster-money-50-1h
+      amount: 3
+    master:
+      permission: group.master
+      booster: booster-money-50-1h
+      amount: 1
+    legend:
+      permission: group.legend
+      booster: booster-money-25-1h
+      amount: 3
+    pro:
+      permission: group.pro
+      booster: booster-money-25-1h
+      amount: 1
+  messages:
+    already-claimed: "<gradient:#FF5DB4:#FF84B4>Perks</gradient> <dark_gray>❘</dark_gray> <white>You have already claimed your weekly booster!"
+    booster-claimed: "<gradient:#FF5DB4:#FF84B4>Perks</gradient> <dark_gray>❘</dark_gray> <white>You have claimed your weekly booster!"
+    reload-success: "<green>Booster claim config reloaded."
+    help:
+      - "<gray>/claimweeklybooster <player></gray> <dark_gray>- <white>Claim a booster based on your rank."
+      - "<gray>/claimweeklybooster reload</gray> <dark_gray>- <white>Reload booster configuration."
+      - "<gray>/claimweeklybooster help</gray> <dark_gray>- <white>Show this help message."
+###
+broadcasts:
+  interval-seconds: 120
+  messages:
+    - # Broadcast 1: Vote
+      - ""
+      - "<#86FC3E><bold>VOTE FOR FREE REWARDS"
+      - ""
+      - "<#86FC3E>❙ <white>When you vote for the server you will get a"
+      - "<#86FC3E>❙ <#FF5DB4>free <white>vote key, <#50D5FF>5m flight time <white>and"
+      - "<#86FC3E>❙ <white>a chance to get fruitcoins and much more!"
+      - ""
+      - "<yellow>Type <yellow><bold>/VOTE</bold><yellow> to learn more"
+
+    - # Broadcast 2: Discord
+      - ""
+      - "<#50D5FF><bold>DISCORD COMMUNITY"
+      - ""
+      - "<#50D5FF>❙ <white>Join our Discord community to learn about the"
+      - "<#50D5FF>❙ <#FF9100>latest changes <white>& events, enter giveaways and"
+      - "<#50D5FF>❙ <white>talk to <#B95FFF>friends<white>!"
+      - ""
+      - "<yellow>Type <yellow><bold>/DISCORD</bold><yellow> to learn more"
+
+    - # Broadcast 3: Store
+      - ""
+      - "<#FF9100><bold>FRUITVILLE STORE"
+      - ""
+      - "<#FF9100>❙ <white>Purchase fruitcoins to support the server and"
+      - "<#FF9100>❙ <white>buy <#86FC3E>crate keys<white>, perks and more."
+      - ""
+      - "<yellow>Type <yellow><bold>/STORE</bold><yellow> to learn more"
+
+    - # Broadcast 4: Rules
+      - ""
+      - "<#F44952><bold>SERVER RULES"
+      - ""
+      - "<#F44952>❙ <white>Make sure you're following the server rules at all time!"
+      - "<#F44952>❙ <white>Failure to follow them can result in <#B95FFF>punishment<white>."
+      - ""
+      - "<yellow>Type <yellow><bold>/RULES</bold><yellow> to read them"
+
+    - # Broadcast 5: Giveaways
+      - ""
+      - "<#FF5DB4><bold>GIVEAWAYS"
+      - ""
+      - "<#FF5DB4>❙ <white>Want to win free ranks, coins and more?"
+      - "<#FF5DB4>❙ <white>Enter giveaways on our Discord server."
+      - ""
+      - "<yellow>Type <yellow><bold>/DISCORD</bold><yellow> to learn more"
+
+    - # Broadcast 6: Discount
+      - ""
+      - "<#FFD700><bold>FIRST RANK DISCOUNT"
+      - ""
+      - "<#FFD700>❙ <white>Get<#86FC3E> 50%% off<white> your first rank with the code"
+      - "<#FFD700>❙ <bold>FIRST50 <white><italic>(valid for the Pro Rank only)</italic>"
+      - "<#FFD700>❙ <white>Support the server and unlock exclusive perks!"
+      - ""
+      - "<yellow>Visit <yellow><bold>/STORE</bold><yellow> to learn more!"
+  messages-meta:
+    reload-success: "<green>Broadcast config reloaded."
+    help:
+      - "<gray>Automatic broadcasts rotate every 120 seconds."
+      - "<gray>Each broadcast is a separate list inside <white>broadcasts.messages</white>."
+      - "<gray>Edit any group to customize the messages you want shown."
+      - "<gray>Use <white>/broadcasts reload</white> to apply your changes."
+###
+## BALTOP SECTION
+baltop:
+  title: "<#86FC3E><bold>TOP RICHEST PLAYERS"
+  format: "<gray>{position}. <white>{name} <dark_gray>- <#BEF89B>${balance}"
+  message-empty: "<red>No leaderboard data available."
+  cooldown-seconds: 300
+  placeholder-names:
+    - "%topper_money;top_name;1%"
+    - "%topper_money;top_name;2%"
+    - "%topper_money;top_name;3%"
+    - "%topper_money;top_name;4%"
+    - "%topper_money;top_name;5%"
+    - "%topper_money;top_name;6%"
+    - "%topper_money;top_name;7%"
+    - "%topper_money;top_name;8%"
+    - "%topper_money;top_name;9%"
+    - "%topper_money;top_name;10%"
+  placeholder-balances:
+    - "%topper_money;top_value;1%"
+    - "%topper_money;top_value;2%"
+    - "%topper_money;top_value;3%"
+    - "%topper_money;top_value;4%"
+    - "%topper_money;top_value;5%"
+    - "%topper_money;top_value;6%"
+    - "%topper_money;top_value;7%"
+    - "%topper_money;top_value;8%"
+    - "%topper_money;top_value;9%"
+    - "%topper_money;top_value;10%"
+  messages:
+    cooldown: "<gray>You must wait before using this command again."
+    reload-success: "<green>Baltop config reloaded."
+    help:
+      - "<gray>/baltop</gray> <dark_gray>- <white>View the richest players."
+      - "<gray>/baltop reload</gray> <dark_gray>- <white>Reload baltop configuration."
+      - "<gray>/baltop help</gray> <dark_gray>- <white>Show this help message."
+###
+## FRUITCOIN SECTION
+fruitcoin:
+  messages:
+    invalid-target: "<red>The specified player is not online."
+    missing-amount: "<red>You must enter an amount to send."
+    reload-success: "<green>Fruitcoin config reloaded."
+    help:
+      - "<gray>/fruitcoin</gray> <dark_gray>- <white>Open your Fruitcoin menu."
+      - "<gray>/fruitcoin store</gray> <dark_gray>- <white>Open the Fruitcoin store."
+      - "<gray>/fruitcoin pay <player> <amount></gray> <dark_gray>- <white>Send Fruitcoins to another player."
+      - "<gray>/fruitcoin help</gray> <dark_gray>- <white>Show this help menu."
+###
+## INFO SECTION
+info:
+  discord:
+    message:
+      - ""
+      - "<#337EFF><bold>DISCORD COMMUNITY"
+      - ""
+      - "<white>Join the ultimate Discord community to stay"
+      - "<white>up to date on news, giveaways and more!"
+      - ""
+      - "<link:https://discord.gg/fruitville><#A9CCFF><underlined>discord.gg/fruitville</underlined><reset> <gray>[Click]"
+  store:
+    message:
+      - ""
+      - "<#86FC3E><bold>SERVER WEBSTORE"
+      - ""
+      - "<white>Purchase ranks, gems & more from our webstore!"
+      - "<white>Your support helps keep the server running."
+      - ""
+      - "<link:https://store.fruitville.org><#BEF89B><underlined>store.fruitville.org</underlined><reset> <gray>[Click]"
+  rules:
+    message:
+      - ""
+      - "<gold><bold>SERVER RULES"
+      - ""
+      - "<white>- No hacked clients or mods"
+      - "<white>- No auto clickers, macros or AFK grinding"
+      - "<white>- No swearing or toxic language"
+      - "<white>- No spamming or flooding chat"
+      - "<white>- No scamming players"
+      - "<white>- No IRL trading"
+      - ""
+      - "<gray>Full list of rules: <link:https://discord.gg/fruitville><#50D5FF><underlined>discord.gg/fruitville</underlined><reset> <gray>[Click]"
+      - ""
+  messages:
+    reload-success: "<green>Info messages reloaded."
+    help:
+      - "<gray>/discord</gray> <dark_gray>- <white>Shows our Discord server."
+      - "<gray>/store</gray> <dark_gray>- <white>Visit our server webstore."
+      - "<gray>/rules</gray> <dark_gray>- <white>View the server rules."
+###
+## CORE/WELCOME SECTION
+core:
+  welcome:
+    active-seconds: 15
+    reward-command: "eco give {player} 1000"
+    reward-message: "<#86FC3E><bold>+ $1,000"
+    no-welcome-message: "<red>No new players have joined the server recently."
+    cooldown-message: "<red>Please wait 15 seconds between using this command."
+###
+## RESIZE SECTION
+resize:
+  options:
+    1:
+      permission: none
+    0.8:
+      permission: group.pro
+    0.7:
+      permission: group.legend
+    0.5:
+      permission: group.master
+    0.25:
+      permission: group.elite
+    1.25:
+      permission: group.ultimate
+    1.5:
+      permission: group.fruit
+  messages:
+    success: "<green>Set <white>{player}</white>'s scale to <aqua>{scale}</aqua>."
+    invalid-scale: "<red>Invalid scale: <white>{scale}</white>."
+    no-permission: "<red>{player} doesn't have permission for scale <white>{scale}</white>."
+    reload-success: "<green>Resize config reloaded."
+    help:
+      - "<gray>/resize <scale> <player></gray> <dark_gray>- <white>Adjust a player's size."
+      - "<gray>/resize help</gray> <dark_gray>- <white>Show help."
+###
+## CLAIM WEEKLY REWARDS SECTION
+rewards:
+  cooldown-permission: "weeklyreward.cooldown"
+  cooldown-duration: "7d"
+  luckperms-context: "server=oneblock"
+  messages:
+    already-claimed: "<#FF5DB4>Perks &8❘ <white>You have already claimed your weekly reward!"
+    reward-claimed: "<#FF5DB4>Perks &8❘ <white>You have claimed your weekly reward!"
+    reload-success: "<green>Reward config reloaded."
+    help:
+      - "<gray>/claimweeklyreward <player></gray> <dark_gray>- <white>Manually trigger a weekly reward."
+      - "<gray>/claimweeklyreward help</gray> <dark_gray>- <white>Show help."
+  groups:
+    fruit:
+      permission: group.fruit
+      rewards:
+        - "100:crate key give {player} treasure 2"
+        - "100:crate key give {player} spawner 2"
+        - "10:crate key give {player} spawner 1"
+        - "10:crate key give {player} treasure 1"
+        - "60:rs give spawner {player} enderman 1 3"
+        - "50:rs give spawner {player} phantom 1 3"
+        - "40:rs give spawner {player} guardian 1 3"
+        - "30:rs give spawner {player} iron_golem 1 3"
+        - "25:ei give {player} flight-time-1h 3"
+        - "25:ei give {player} sell-wand-2-100 1"
+        - "15:safarinet give {player} reusable 1"
+    ultimate:
+      permission: group.ultimate
+      rewards:
+        - "100:crate key give {player} treasure 1"
+        - "100:crate key give {player} spawner 1"
+        - "5:crate key give {player} spawner 1"
+        - "5:crate key give {player} treasure 1"
+        - "60:rs give spawner {player} enderman 1 1"
+        - "50:rs give spawner {player} phantom 1 1"
+        - "40:rs give spawner {player} guardian 1 1"
+        - "30:rs give spawner {player} iron_golem 1 1"
+        - "25:ei give {player} flight-time-1h 3"
+        - "25:ei give {player} sell-wand-2-100 1"
+        - "15:safarinet give {player} singleuse 1"
+    elite:
+      permission: group.elite
+      rewards:
+        - "100:crate key give {player} epic 5"
+        - "100:crate key give {player} spawner 1"
+        - "5:crate key give {player} spawner 1"
+        - "5:crate key give {player} treasure 1"
+        - "55:rs give spawner {player} enderman 1 1"
+        - "45:rs give spawner {player} phantom 1 1"
+        - "35:rs give spawner {player} guardian 1 1"
+        - "25:rs give spawner {player} iron_golem 1 1"
+        - "20:ei give {player} flight-time-1h 3"
+        - "20:ei give {player} sell-wand-1-250 1"
+        - "10:safarinet give {player} singleuse 1"
+    master:
+      permission: group.master
+      rewards:
+        - "100:crate key give {player} vote 8"
+        - "100:crate key give {player} epic 5"
+        - "5:crate key give {player} spawner 1"
+        - "5:crate key give {player} treasure 1"
+        - "50:rs give spawner {player} enderman 1 1"
+        - "40:rs give spawner {player} phantom 1 1"
+        - "30:rs give spawner {player} guardian 1 1"
+        - "20:rs give spawner {player} iron_golem 1 1"
+        - "20:ei give {player} flight-time-1h 1"
+        - "20:ei give {player} sell-wand-1-100 1"
+        - "10:safarinet give {player} singleuse 1"
+    legend:
+      permission: group.legend
+      rewards:
+        - "100:crate key give {player} vote 5"
+        - "100:crate key give {player} epic 3"
+        - "50:rs give spawner {player} zombie 1 1"
+        - "40:rs give spawner {player} skeleton 1 1"
+        - "30:rs give spawner {player} enderman 1 1"
+        - "20:rs give spawner {player} phantom 1 1"
+        - "20:ei give {player} flight-time-15m 1"
+        - "20:ei give {player} sell-wand-1-50 1"
+        - "10:safarinet give {player} singleuse 1"
+    pro:
+      permission: group.pro
+      rewards:
+        - "100:crate key give {player} vote 3"
+        - "100:crate key give {player} epic 1"
+        - "50:rs give spawner {player} cow 1 1"
+        - "40:rs give spawner {player} zombie 1 1"
+        - "30:rs give spawner {player} skeleton 1 1"
+        - "20:rs give spawner {player} enderman 1 1"
+        - "20:ei give {player} flight-time-15m 1"
+        - "20:ei give {player} sell-wand-1-25 1"
+        - "10:safarinet give {player} singleuse 1"
+###
+## SEASONAL KEY SECTION
+seasonal:
+  key-name: "gamer"
+  required-group: "group.fruit"
+  claim-permission: "seasonal.key"
+  messages:
+    already-claimed: "<#FF5DB4>Perks &8❘ <white>You have already claimed your free key!"
+    key-given: "<#FF5DB4>Perks &8❘ <white>You have been given your seasonal crate key!"
+    not-eligible: "<#FF5DB4>Perks &8❘ <white>You are not eligible to receive this key."
+    reload-success: "<green>Seasonal key config reloaded."
+    help:
+      - "<gray>/seasonalkey give <player></gray> <dark_gray>- <white>Give a one-time seasonal key."
+      - "<gray>/seasonalkey clear</gray> <dark_gray>- <white>Clear all seasonal claims."
+###
+##
