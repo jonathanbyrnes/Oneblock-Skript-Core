@@ -1,5 +1,6 @@
 package byrnes.jonathan.listener;
 
+import byrnes.jonathan.config.ConfigHelper;
 import byrnes.jonathan.manager.GgWaveManager;
 import byrnes.jonathan.util.MessageUtil;
 import io.papermc.paper.chat.ChatRenderer;
@@ -9,21 +10,26 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
+import java.util.Map;
+import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 public class GgWaveListener implements Listener {
     private static final Pattern GG_WORD = Pattern.compile("(?i)\\bgg\\b");
     private final GgWaveManager manager;
-    private final Logger logger;
+    private final Map<UUID, Long> cooldowns = new ConcurrentHashMap<>();
+    private final ConfigHelper config;
 
-    public GgWaveListener(GgWaveManager manager, Logger logger) {
+    public GgWaveListener(GgWaveManager manager, ConfigHelper config) {
         this.manager = manager;
-        this.logger = logger;
+        this.config = config;
     }
 
     @EventHandler
@@ -76,6 +82,15 @@ public class GgWaveListener implements Listener {
                     .append(Component.text(": ", NamedTextColor.WHITE))
                     .append(message);                 // GG-styled component
 
+            long now = System.currentTimeMillis();
+            long lastUsed = cooldowns.getOrDefault(player.getUniqueId(), 0L);
+            if (!(now - lastUsed < 15_000)) {
+                String rewardCommand = config.config().getString("core.ggwave.reward-command")
+                        .replace("{player}", player.getName());
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), rewardCommand);
+                player.sendMessage(config.getMessage("core.ggwave.reward-message"));
+                cooldowns.put(player.getUniqueId(), now);
+            }
             return full;
         }));
 
