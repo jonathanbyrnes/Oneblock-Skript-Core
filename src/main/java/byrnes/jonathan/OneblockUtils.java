@@ -39,7 +39,7 @@ public final class OneblockUtils extends JavaPlugin {
         // Register listeners
         CoreListener coreListener = new CoreListener(configHelper);
         getServer().getPluginManager().registerEvents(coreListener, this);
-        getServer().getPluginManager().registerEvents(new GgWaveListener(ggManager, this.getLogger()), this);
+        getServer().getPluginManager().registerEvents(new GgWaveListener(ggManager, configHelper), this);
         getServer().getPluginManager().registerEvents(new DropLockListener(dropLockManager,configHelper), this);
         getServer().getPluginManager().registerEvents(new CreateIslandListener(this), this);
 
