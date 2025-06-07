@@ -1,5 +1,6 @@
 package byrnes.jonathan.listener;
 
+import byrnes.jonathan.OneblockUtils;
 import byrnes.jonathan.config.ConfigHelper;
 import byrnes.jonathan.manager.GgWaveManager;
 import byrnes.jonathan.util.MessageUtil;
@@ -14,6 +15,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Map;
 import java.util.UUID;
@@ -26,10 +28,12 @@ public class GgWaveListener implements Listener {
     private final GgWaveManager manager;
     private final Map<UUID, Long> cooldowns = new ConcurrentHashMap<>();
     private final ConfigHelper config;
+    private final JavaPlugin plugin;
 
-    public GgWaveListener(GgWaveManager manager, ConfigHelper config) {
+    public GgWaveListener(GgWaveManager manager, ConfigHelper config, JavaPlugin plugin) {
         this.manager = manager;
         this.config = config;
+        this.plugin = plugin;
     }
 
     @EventHandler
@@ -85,11 +89,14 @@ public class GgWaveListener implements Listener {
             long now = System.currentTimeMillis();
             long lastUsed = cooldowns.getOrDefault(player.getUniqueId(), 0L);
             if (!(now - lastUsed < 15_000)) {
-                String rewardCommand = config.config().getString("core.ggwave.reward-command")
-                        .replace("{player}", player.getName());
-                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), rewardCommand);
-                player.sendMessage(config.getMessage("core.ggwave.reward-message"));
-                cooldowns.put(player.getUniqueId(), now);
+                Bukkit.getScheduler().runTask(plugin, () -> {
+                    String rewardCommand = config.config().getString("core.ggwave.reward-command")
+                            .replace("{player}", player.getName());
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), rewardCommand);
+                    player.sendMessage(config.getMessage("core.ggwave.reward-message"));
+                    cooldowns.put(player.getUniqueId(), now);
+                });
+
             }
             return full;
         }));
