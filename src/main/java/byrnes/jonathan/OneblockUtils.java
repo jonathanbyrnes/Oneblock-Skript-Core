@@ -55,6 +55,7 @@ public final class OneblockUtils extends JavaPlugin {
         parser.parse(new GgWaveCommand(ggManager, this));
         parser.parse(new ResizeCommand(configHelper));
         parser.parse(new ClaimWeeklyRewardCommand(configHelper));
+        parser.parse(new ClaimWeeklyBoosterCommand(configHelper));
         parser.parse(new SeasonalKeyCommand(configHelper));
         parser.parse(new StaffCommand());
         parser.parse(new DropLockCommand(dropLockManager,configHelper));
