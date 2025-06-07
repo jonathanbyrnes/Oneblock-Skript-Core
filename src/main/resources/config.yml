@@ -295,8 +295,8 @@ rewards:
   cooldown-duration: "7d"
   luckperms-context: "server=oneblock"
   messages:
-    already-claimed: "<#FF5DB4>Perks &8❘ <white>You have already claimed your weekly reward!"
-    reward-claimed: "<#FF5DB4>Perks &8❘ <white>You have claimed your weekly reward!"
+    already-claimed: "<#FF5DB4>Perks <gray>❘ <white>You have already claimed your weekly reward!"
+    reward-claimed: "<#FF5DB4>Perks <gray>❘ <white>You have claimed your weekly reward!"
     reload-success: "<green>Reward config reloaded."
     help:
       - "<gray>/claimweeklyreward <player></gray> <dark_gray>- <white>Manually trigger a weekly reward."
@@ -389,9 +389,9 @@ seasonal:
   required-group: "group.fruit"
   claim-permission: "seasonal.key"
   messages:
-    already-claimed: "<#FF5DB4>Perks &8❘ <white>You have already claimed your free key!"
-    key-given: "<#FF5DB4>Perks &8❘ <white>You have been given your seasonal crate key!"
-    not-eligible: "<#FF5DB4>Perks &8❘ <white>You are not eligible to receive this key."
+    already-claimed: "<#FF5DB4>Perks <gray>❘ <white>You have already claimed your free key!"
+    key-given: "<#FF5DB4>Perks <gray>❘ <white>You have been given your seasonal crate key!"
+    not-eligible: "<#FF5DB4>Perks <gray>❘ <white>You are not eligible to receive this key."
     reload-success: "<green>Seasonal key config reloaded."
     help:
       - "<gray>/seasonalkey give <player></gray> <dark_gray>- <white>Give a one-time seasonal key."
