@@ -2,6 +2,7 @@ name: OneblockUtils
 version: '1.0-SNAPSHOT'
 main: byrnes.jonathan.OneblockUtils
 api-version: '1.21'
+softdepend: [SuperiorSkyblock]
 dependencies:
   server:
     PlaceholderAPI:
