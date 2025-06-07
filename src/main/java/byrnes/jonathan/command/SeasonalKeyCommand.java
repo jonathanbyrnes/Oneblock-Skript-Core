@@ -27,7 +27,7 @@ public class SeasonalKeyCommand {
             @Argument("player") final Player target
     ) {
         String requiredGroup = config.config().getString("seasonal.required-group", "group.fruit");
-        String keyType = config.config().getString("seasonal.key-name", "gamer");
+        String keyType = config.config().getString("seasonal.key-name", "sakura");
         String claimPermission = config.config().getString("seasonal.claim-permission", "seasonal.key");
 
         if (!target.hasPermission(requiredGroup)) {

@@ -382,7 +382,7 @@ rewards:
 ###
 ## SEASONAL KEY SECTION
 seasonal:
-  key-name: "gamer"
+  key-name: "sakura"
   required-group: "group.fruit"
   claim-permission: "seasonal.key"
   messages:
