@@ -2,6 +2,8 @@ package byrnes.jonathan.command;
 
 import byrnes.jonathan.config.ConfigHelper;
 import byrnes.jonathan.listener.CoreListener;
+import byrnes.jonathan.util.MessageUtil;
+import me.clip.placeholderapi.PlaceholderAPI;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
@@ -49,7 +51,25 @@ public class WelcomeCommand {
         Player target = Bukkit.getPlayer(targetUUID);
         if (target == null) return;
 
-        Bukkit.broadcast(Component.text("Welcome " + target.getName() + " to Oneblock!"));
+        // Fetch the broadcast template from config
+        String template = config.config().getString(
+                "core.welcome.broadcast-message",
+                "%chattags%%vault_prefix%{player_name}&f: Welcome {target_name} to Oneblock!"
+        );
+
+        // Replace the {player_name} placeholder
+        template = template.replace("{player_name}", player.getName());
+        template = template.replace("{target_name}", target.getName());
+        String tagStr = PlaceholderAPI.setPlaceholders(player, "%chattags%");
+        String prefixStr = PlaceholderAPI.setPlaceholders(player, "%vault_prefix%");
+
+        template = template.replace("%chattags%", tagStr);
+        template = template.replace("%vault_prefix%", prefixStr);
+
+        // Send the broadcast
+        Component broadcast = MessageUtil.legacyColor(template);
+        Bukkit.broadcast(broadcast);
+
         String rewardCommand = config.config().getString("core.welcome.reward-command")
                 .replace("{player}", player.getName());
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), rewardCommand);
