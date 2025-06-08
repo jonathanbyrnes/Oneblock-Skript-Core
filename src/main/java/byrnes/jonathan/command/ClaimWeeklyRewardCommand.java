@@ -57,7 +57,7 @@ public class ClaimWeeklyRewardCommand {
             giveRewards(target, rewards);
 
             // Apply cooldown
-            String setPerm = String.format("/lp user %s permission settemp %s true %s %s",
+            String setPerm = String.format("lp user %s permission settemp %s true %s %s",
                     target.getName(), cooldownPermission, cooldownDuration, contextArgs);
             Bukkit.dispatchCommand(Bukkit.getConsoleSender(), setPerm);
 
