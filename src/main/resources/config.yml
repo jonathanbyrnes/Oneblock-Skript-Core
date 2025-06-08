@@ -229,17 +229,27 @@ info:
   rules:
     message:
       - ""
-      - "<gold><bold>SERVER RULES"
+      - "<yellow><bold>Server rules"
       - ""
       - "<white>- No hacked clients or mods"
       - "<white>- No auto clickers, macros or AFK grinding"
       - "<white>- No swearing or toxic language"
       - "<white>- No spamming or flooding chat"
-      - "<white>- No scamming players"
-      - "<white>- No IRL trading"
+      - "<white>- No scamming players or selling fake items to players"
+      - "<white>- No Griefing or Stealing from other players"
+      - "<white>- No renaming spawners or valuable items on the /ah"
       - ""
-      - "<gray>Full list of rules: <link:https://discord.gg/fruitville><#50D5FF><underlined>discord.gg/fruitville</underlined><reset> <gray>[Click]"
+      - "<gray>Full list of rules can be found at <link:https://discord.gg/fruitville><#50D5FF><underlined>discord.gg/fruitville</underlined><reset> <gray>[Click]"
       - ""
+  apply:
+    message:
+      - ""
+      - "<#FF950A><bold>JOIN OUR TEAM!"
+      - ""
+      - "<white>Interested in helping out and joining the"
+      - "<white>fruitville team? Apply to become a helper!"
+      - ""
+      - "<link:https://forms.gle/xaHcM1xoaxdDFjbH7><#FFC578><underlined>apply.fruitville.org</underlined><reset> <gray>[Click]"
   messages:
     reload-success: "<green>Info messages reloaded."
     help:
@@ -255,6 +265,7 @@ core:
     reward-message: "<#86FC3E><bold>+ $1,000"
     no-welcome-message: "<red>No new players have joined the server recently."
     cooldown-message: "<red>Please wait 15 seconds between using this command."
+    broadcast-message: "%chattags%%vault_prefix%{player_name}&f: Welcome {target_name} to Oneblock!"
   ggwave:
     reward-command: "eco give {player} 1000"
     reward-message: "<#86FC3E><bold>+ $1,000"
