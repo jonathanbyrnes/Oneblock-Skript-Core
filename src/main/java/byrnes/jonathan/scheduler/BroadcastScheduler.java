@@ -24,6 +24,7 @@ public class BroadcastScheduler {
     }
 
     public void start() {
+        if(!config.config().getBoolean("broadcasts.enabled")) return;
         reload(); // load messages and interval
 
         stop(); // cancel existing if needed

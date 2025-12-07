@@ -92,6 +92,7 @@ booster-claim:
       - "<gray>/claimweeklybooster help</gray> <dark_gray>- <white>Show this help message."
 ###
 broadcasts:
+  enabled: false
   interval-seconds: 120
   messages:
     - # Broadcast 1: Vote
