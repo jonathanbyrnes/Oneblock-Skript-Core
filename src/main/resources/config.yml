@@ -299,6 +299,11 @@ resize:
     help:
       - "<gray>/resize <scale> <player></gray> <dark_gray>- <white>Adjust a player's size."
       - "<gray>/resize help</gray> <dark_gray>- <white>Show help."
+  blocking:
+    enabled: true
+    worlds:
+      - "warzone"
+      - "spawn"
 ###
 ## CLAIM WEEKLY REWARDS SECTION
 rewards:

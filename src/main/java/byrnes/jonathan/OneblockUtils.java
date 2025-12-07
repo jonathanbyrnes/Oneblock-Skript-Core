@@ -2,10 +2,7 @@ package byrnes.jonathan;
 
 import byrnes.jonathan.command.*;
 import byrnes.jonathan.config.ConfigHelper;
-import byrnes.jonathan.listener.CoreListener;
-import byrnes.jonathan.listener.CreateIslandListener;
-import byrnes.jonathan.listener.DropLockListener;
-import byrnes.jonathan.listener.GgWaveListener;
+import byrnes.jonathan.listener.*;
 import byrnes.jonathan.manager.DropLockManager;
 import byrnes.jonathan.manager.GgWaveManager;
 import byrnes.jonathan.scheduler.BroadcastScheduler;
@@ -42,6 +39,7 @@ public final class OneblockUtils extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new GgWaveListener(ggManager, configHelper, this), this);
         getServer().getPluginManager().registerEvents(new DropLockListener(dropLockManager,configHelper), this);
         getServer().getPluginManager().registerEvents(new CreateIslandListener(this), this);
+        getServer().getPluginManager().registerEvents(new ResizeListener(configHelper), this);
 
         // Register commands
         parser.parse(new KeyAllCommand(configHelper));
