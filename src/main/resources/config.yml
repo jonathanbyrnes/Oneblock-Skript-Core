@@ -271,6 +271,7 @@ core:
     reward-command: "eco give {player} 1000"
     reward-message: "<#86FC3E><bold>+ $1,000"
   droplock:
+    feature-enabled: false
     enabled: "<#F44952>Lock <gray>❘ <white>Drop lock <green>enabled<white>."
     disabled: "<#F44952>Lock <gray>❘ <white>Drop lock <red>disabled<white>."
     locked: "<#F44952>Lock <gray>❘ <white>You can't drop items while drop lock is enabled."

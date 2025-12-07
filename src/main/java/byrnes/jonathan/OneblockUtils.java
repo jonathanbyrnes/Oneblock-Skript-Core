@@ -56,7 +56,10 @@ public final class OneblockUtils extends JavaPlugin {
         parser.parse(new ClaimWeeklyBoosterCommand(configHelper));
         parser.parse(new SeasonalKeyCommand(configHelper));
         parser.parse(new StaffCommand());
-        parser.parse(new DropLockCommand(dropLockManager,configHelper));
+
+        if(configHelper.config().getBoolean("core.droplock.feature-enabled")) {
+            parser.parse(new DropLockCommand(dropLockManager, configHelper));
+        }
 
     }
 
