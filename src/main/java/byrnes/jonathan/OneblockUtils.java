@@ -46,7 +46,6 @@ public final class OneblockUtils extends JavaPlugin {
         parser.parse(new ApplyEffectCommand(configHelper));
         parser.parse(new BroadcastsCommand(configHelper, broadcastScheduler));
         parser.parse(new BaltopCommand(configHelper));
-        parser.parse(new FruitcoinCommand(configHelper));
         parser.parse(new MiscInfoCommand(configHelper));
         parser.parse(new SellCommand());
         parser.parse(new WelcomeCommand(configHelper, coreListener));
