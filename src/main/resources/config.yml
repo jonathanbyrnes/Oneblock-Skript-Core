@@ -195,18 +195,6 @@ baltop:
       - "<gray>/baltop reload</gray> <dark_gray>- <white>Reload baltop configuration."
       - "<gray>/baltop help</gray> <dark_gray>- <white>Show this help message."
 ###
-## FRUITCOIN SECTION
-fruitcoin:
-  messages:
-    invalid-target: "<red>The specified player is not online."
-    missing-amount: "<red>You must enter an amount to send."
-    reload-success: "<green>Fruitcoin config reloaded."
-    help:
-      - "<gray>/fruitcoin</gray> <dark_gray>- <white>Open your Fruitcoin menu."
-      - "<gray>/fruitcoin store</gray> <dark_gray>- <white>Open the Fruitcoin store."
-      - "<gray>/fruitcoin pay <player> <amount></gray> <dark_gray>- <white>Send Fruitcoins to another player."
-      - "<gray>/fruitcoin help</gray> <dark_gray>- <white>Show this help menu."
-###
 ## INFO SECTION
 info:
   discord:
